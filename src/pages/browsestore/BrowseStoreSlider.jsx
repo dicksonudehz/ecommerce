@@ -1,7 +1,5 @@
 import React from "react";
 import "./browsestoreslider.css";
-import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
-import Topbar from "../../component/Topbar";
 import BreadcrumSlider from "../../component/breadcrumslider/BreadcrumSlider";
 
 const BrowseStoreSlider = () => {
