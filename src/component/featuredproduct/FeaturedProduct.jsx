@@ -4,7 +4,6 @@ import ChevronRightOutlinedIcon from "@mui/icons-material/ChevronRightOutlined";
 import KeyboardArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardArrowLeftOutlined";
 import ProductionQuantityLimitsOutlinedIcon from "@mui/icons-material/ProductionQuantityLimitsOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-// import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 const FeaturedProduct = () => {
   return (

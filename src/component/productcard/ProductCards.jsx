@@ -1,5 +1,4 @@
 import React from "react";
-// import productData from "../../productData";
 
 import "./productcard.css";
 import CardItems from "../cardItem/CardItems";

@@ -8,7 +8,6 @@ import ProductAd from "../component/productad/ProductAd";
 import SalesProduct from "../component/salesproduct/SalesProduct";
 import GreenProduct from "../component/greenproduct/GreenProduct";
 import ProductReel from "../component/productreel/ProductReel";
-// import Footer from "../component/footer/Footer";
 import BestSeller from "../component/bestsellingproduct/BestSeller";
 
 function Home() {
@@ -24,7 +23,6 @@ function Home() {
       <GreenProduct />
       <ProductReel />
       <BestSeller/>
-      {/* <Footer/> */}
     </>
   );
 }

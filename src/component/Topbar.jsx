@@ -4,8 +4,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import DensityMediumIcon from "@mui/icons-material/DensityMedium";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import "./topbar.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Category from "../pages/category/Category";
+import {  Link } from "react-router-dom";
 
 function Topbar() {
   return (
