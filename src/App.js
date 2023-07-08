@@ -1,4 +1,3 @@
-import BreadcrumSlider from "./component/breadcrumslider/BreadcrumSlider";
 import Footer from "./component/footer/Footer";
 import Home from "./pages/Home";
 import BestSellerPage from "./pages/bestsellingproduct/BestSellerPage";

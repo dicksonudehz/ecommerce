@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect, useRef} from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import DensityMediumIcon from "@mui/icons-material/DensityMedium";
@@ -7,6 +7,21 @@ import "./topbar.css";
 import {  Link } from "react-router-dom";
 
 function Topbar() {
+  const [openSidebar, setOpenSidebar] = useState(false)
+  let menuRef = useRef();
+
+ useEffect(()=>{
+  let handler = (e) => {
+    if(!menuRef.current.contains(e.target)){
+      setOpenSidebar(false)
+    };
+  }
+  document.addEventListener("mousedown", handler)
+  return () =>{
+    document.removeEventListener("mousedown", handler)
+  }
+ })
+  
   return (
     <>
       <div className="topBarContainer">
@@ -30,15 +45,15 @@ function Topbar() {
       </div>
       <div className="topBarBottomContainer">
         {/* <div className="leftNavContainer"> */}
-        <div className="topBarBottomLeft">
-          <div className="test">
-            <div className="topBarBottomDropLeft">
+        <div className="topBarBottomLeft" ref={menuRef}>
+          <div className="test" onClick={()=>{setOpenSidebar(!openSidebar)}}>
+            <div className="topBarBottomDropLeft"  >
               <DensityMediumIcon className="dropBar" />
               <span className="category">browse categories</span>
             </div>
             <ArrowDropDownIcon className="dropBarArrow" />
           </div>
-          <div className="dropdownItems">
+          <div className={`dropdownItems ${openSidebar ? 'active' : 'inactive'}`}>
             <ul>
               <li>body care</li>
               <li>drinks</li>
