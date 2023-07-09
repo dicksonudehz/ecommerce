@@ -24,4 +24,47 @@ const Data = [
     addSign: "+",
   },
 ];
-export default Data;
+
+
+const previewProductData = [
+  {
+    image: "img/manyyam.jpg",
+    title: "game triger finger new insulated PH-X",
+    price: 2000,
+    addtocart: "add to cart",
+  },
+  {
+    image: "img/manyyam.jpg",
+    title: "game triger finger new insulated PH-X",
+    price: 2000,
+    addtocart: "add to cart",
+  },
+  {
+    image: "img/manyyam.jpg",
+    title: "game triger finger new insulated PH-X",
+    price: 2000,
+    addtocart: "add to cart",
+  },
+  {
+    image: "img/manyyam.jpg",
+    title: "game triger finger new insulated PH-X",
+    price: 2000,
+    addtocart: "add to cart",
+  },
+  {
+    image: "img/manyyam.jpg",
+    title: "game triger finger new insulated PH-X",
+    price: 2000,
+    addtocart: "add to cart",
+  },
+  {
+    image: "img/manyyam.jpg",
+    title: "game triger finger new insulated PH-X",
+    price: 2000,
+    addtocart: "add to cart",
+  }
+]
+export default {
+  Data,
+  previewProductData
+}

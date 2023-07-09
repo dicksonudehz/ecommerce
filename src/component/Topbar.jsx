@@ -33,7 +33,7 @@ function Topbar() {
             placeholder="search all product here"
             className="searchAllProduct"
           />
-          <SearchIcon className="searchIcon" />
+          <SearchIcon className="topBarSearchIcon" />
         </div>
         <div className="rightTopBarContainer">
           <h2 className="topBarAuth">login/register</h2>
