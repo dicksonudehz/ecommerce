@@ -4,7 +4,7 @@ import BreadcrumSlider from "../../component/breadcrumslider/BreadcrumSlider";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import FlashlightOnIcon from "@mui/icons-material/FlashlightOn";
-import Data from "./productData.js";
+import {Data} from "./productData.js";
 
 const ExpressOrder = () => {
   const [clicked, setClicked] = useState(false);
@@ -20,7 +20,7 @@ const ExpressOrder = () => {
     return () =>{
       document.removeEventListener("mousedown", handler)
     }
-   }, [])
+   }, [clicked])
 
   const toogle = (i) => {
     if (clicked === i) {

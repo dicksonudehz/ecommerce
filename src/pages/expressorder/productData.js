@@ -1,4 +1,4 @@
-const Data = [
+export const Data = [
   {
     image: "./images/onion.jpg",
     title: " African Batthing Spong",
@@ -26,45 +26,44 @@ const Data = [
 ];
 
 
-const previewProductData = [
+
+export const previewProductData = [
   {
-    image: "img/manyyam.jpg",
+    image: "./images/onion.jpg",
     title: "game triger finger new insulated PH-X",
     price: 2000,
     addtocart: "add to cart",
   },
   {
-    image: "img/manyyam.jpg",
+    image: "./images/manyyam.jpg",
     title: "game triger finger new insulated PH-X",
     price: 2000,
     addtocart: "add to cart",
   },
   {
-    image: "img/manyyam.jpg",
+    image: "./images/custard.jpg",
     title: "game triger finger new insulated PH-X",
     price: 2000,
     addtocart: "add to cart",
   },
   {
-    image: "img/manyyam.jpg",
+    image: "./images/yam.jpg",
     title: "game triger finger new insulated PH-X",
     price: 2000,
     addtocart: "add to cart",
   },
   {
-    image: "img/manyyam.jpg",
+    image: "./images/onion.jpg",
     title: "game triger finger new insulated PH-X",
     price: 2000,
     addtocart: "add to cart",
   },
   {
-    image: "img/manyyam.jpg",
+    image: "./images/custard.jpg",
     title: "game triger finger new insulated PH-X",
     price: 2000,
     addtocart: "add to cart",
   }
-]
-export default {
-  Data,
-  previewProductData
-}
+];
+
+

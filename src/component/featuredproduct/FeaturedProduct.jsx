@@ -1,11 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./featuredproduct.css";
 import ChevronRightOutlinedIcon from "@mui/icons-material/ChevronRightOutlined";
 import KeyboardArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardArrowLeftOutlined";
 import ProductionQuantityLimitsOutlinedIcon from "@mui/icons-material/ProductionQuantityLimitsOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import { previewProductData } from "../../pages/expressorder/productData";
+import { fetchAllProduct } from "../../slice/fetchAllProductSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const FeaturedProduct = () => {
+  const dispatch = useDispatch();
+
+  const {
+    loading: pLoading,
+    data: pData,
+    error: pError,
+  } = useSelector((state) => state.fetchAllProduct);
+
+  useEffect(() => {
+    dispatch(fetchAllProduct());
+  }, [dispatch]);
+
+  const [select, setSelect] = useState(null);
+
+  const Toogle = (index) => {
+    if (select === index) {
+      return setSelect(select);
+    }
+    setSelect(index);
+  };
   return (
     <>
       <div className="featureProductContainer">
@@ -28,6 +51,9 @@ const FeaturedProduct = () => {
               </div>
             </div>
             <div className="featureProConBottom">
+              {pLoading && <p>loading...</p>}
+              {pError && <p>error: {pError} </p>}
+             
               <img
                 src="./images/malta.jpg"
                 alt="this is a placeholder"
@@ -56,102 +82,33 @@ const FeaturedProduct = () => {
             </div>
           </div>
           <div className="featuredProConBottom">
-            <div className="mainProContainer">
-              <div className="mainProIcons">
-                <SearchOutlinedIcon className="mainProIcon" />
-              </div>
-              <div className="mainProInfoCon">
-                <img src="./images/peakmilk.jpg" alt="" className="proImg" />
-                <button className="addToCart">Add to cart </button>
-                {/* <button className="addToCart">
+          {pData &&
+                pData.map((product, index) => {
+                  return (
+                    <>
+                  <div className= "mainProContainer" key={index}>
+                    <div className="mainProIcons">
+                      <SearchOutlinedIcon className="mainProIcon" />
+                    </div>
+                    <div className="mainProInfoCon">
+                      <img src={product.image} alt="" className="proImg" />
+                      <button className="addToCart">
+                       add to cart
+                      </button>
+                      {/* <button className="addToCart">
                       <ShoppingCartOutlinedIcon />
                     </button> */}
-                <div className="mainProTitle">
-                  <h1 className="proTitle">Burger Peanuts Snack by Nkatie</h1>
-                  <p className="proPrice">N4000</p>
-                </div>
-              </div>
-            </div>
-            <div className="mainProContainer">
-              <div className="mainProIcons">
-                <SearchOutlinedIcon className="mainProIcon" />
-              </div>
-              <div className="mainProInfoCon">
-                <img src="./images/onion.jpg" alt="" className="proImg" />
-                <button className="addToCart">Add to cart </button>
-                {/* <button className="addToCart">
-                      <ShoppingCartOutlinedIcon />
-                    </button> */}
-                <div className="mainProTitle">
-                  <h1 className="proTitle">Burger Peanuts Snack by Nkatie</h1>
-                  <p className="proPrice">N4000</p>
-                </div>
-              </div>
-            </div>
-            <div className="mainProContainer">
-              <div className="mainProIcons">
-                <SearchOutlinedIcon className="mainProIcon" />
-              </div>
-              <div className="mainProInfoCon">
-                <img src="./images/manyyam.jpg" alt="" className="proImg" />
-                <button className="addToCart">Add to cart </button>
-                {/* <button className="addToCart">
-                      <ShoppingCartOutlinedIcon />
-                    </button> */}
-                <div className="mainProTitle">
-                  <h1 className="proTitle">Burger Peanuts Snack by Nkatie</h1>
-                  <p className="proPrice">N4000</p>
-                </div>
-              </div>
-            </div>
-            <div className="mainProContainer">
-              <div className="mainProIcons">
-                <SearchOutlinedIcon className="mainProIcon" />
-              </div>
-              <div className="mainProInfoCon">
-                <img src="./images/yam.jpg" alt="" className="proImg" />
-                <button className="addToCart">Add to cart </button>
-                {/* <button className="addToCart">
-                      <ShoppingCartOutlinedIcon />
-                    </button> */}
-                <div className="mainProTitle">
-                  <h1 className="proTitle">Burger Peanuts Snack by Nkatie</h1>
-                  <p className="proPrice">N4000</p>
-                </div>
-              </div>
-            </div>
-            <div className="mainProContainer">
-              <div className="mainProIcons">
-                <SearchOutlinedIcon className="mainProIcon" />
-              </div>
-              <div className="mainProInfoCon">
-                <img src="./images/custard.jpg" alt="" className="proImg" />
-                <button className="addToCart">Add to cart </button>
-                {/* <button className="addToCart">
-                      <ShoppingCartOutlinedIcon />
-                    </button> */}
-                <div className="mainProTitle">
-                  <h1 className="proTitle">Burger Peanuts Snack by Nkatie</h1>
-                  <p className="proPrice">N4000</p>
-                </div>
-              </div>
-            </div>
-            <div className="mainProContainer">
-              <div className="mainProIcons">
-                <SearchOutlinedIcon className="mainProIcon" />
-              </div>
-              <div className="mainProInfoCon">
-                <img src="./images/heinz.jpg" alt="" className="proImg" />
-                <button className="addToCart">Add to cart </button>
-                {/* <button className="addToCart">
-                      <ShoppingCartOutlinedIcon />
-                    </button> */}
-                <div className="mainProTitle">
-                  <h1 className="proTitle">Burger Peanuts Snack by Nkatie</h1>
-                  <p className="proPrice">N4000</p>
-                </div>
-              </div>
-            </div>
+                      <div className="mainProTitle">
+                        <h1 className="proTitle">{product.name}</h1>
+                        <p className="proPrice">{product.price}</p>
+                      </div>
+                    </div>
+                  </div>
+                    </>
+                  );
+                })}
+                  
+          
           </div>
         </div>
       </div>
