@@ -9,6 +9,7 @@
 .salesProConLeft {
   flex: 7.5;
   background-color: rgb(255, 255, 255);
+  position: relative;
   /* padding: 26px; */
 }
 
@@ -136,7 +137,7 @@
   border: 1px solid black;
   position: relative;
 }
-.saleProdContainerContent{
+.saleProdContainerContent {
   background-color: rgb(243, 243, 243);
   padding-bottom: 40px;
 }
@@ -150,7 +151,6 @@
   right: 0;
   margin-top: 15px;
   margin-right: 30px;
-  
 }
 .salesProductConBottomRightCon {
   position: absolute;
@@ -235,4 +235,142 @@
   font-size: 16;
   font-weight: bold;
   padding-left: 10px;
+}
+.coverPopContainer{
+  background-color: rgba(0, 0, 1, 0.356);
+  position: absolute;
+  z-index: 9999999999;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  margin: auto;
+  flex: 7.5;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 35px;
+}
+.productModalContainer {
+  position: absolute;
+  background-color: rgb(240, 240, 240);
+  z-index: 9999999999;
+  width: 100%;
+  top: 20%;
+  left: 30%;
+  margin: auto;
+  flex: 7.5;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 35px;
+}
+
+.imgContainer{
+  background-color: white;
+  width: 45%;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.imgModel {
+  width: 100%;
+  object-fit: cover;
+}
+.imgAddToCart{
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 0px;
+  background-color: rgb(24, 24, 68);
+  outline: none;
+  cursor: pointer;
+}
+.productDescCont{
+  font-weight: normal;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+.productDescCont p{
+  font-weight: normal;
+  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.productCounter{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10;
+  
+}
+ .counter{
+  color: black;
+  padding: 10px;
+  outline: none;
+  border: none;
+  margin-right: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.substract{
+  color: black;
+  padding: 10px;
+  outline: none;
+  border: none;
+  background-color: rgb(228, 228, 228);
+  cursor: pointer;
+}
+ .addition{
+  color: black;
+  padding: 10px;
+  outline: none;
+  border: none;
+  background-color: rgb(228, 228, 228);
+  cursor: pointer;
+}
+.addCartCounter{
+  padding: 10px 40px;
+  background-color: rgb(30, 30, 97);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: capitalize;
+  text-align: center;
+  margin-left: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.shareProdSocialIcons{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.closeButton{
+  top: 0;
+  right: 0;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  font-weight: bold;
+  background-color: red;
+  padding: 10px;
+  cursor: pointer;
+}
+.closeButton:hover{
+  top: 0;
+  right: 0;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  font-weight: bold;
+  background-color: red;
+  padding: 10px;
+  cursor: pointer;
+  transform: rotate(180deg);
+  transition: all 1s;
 }

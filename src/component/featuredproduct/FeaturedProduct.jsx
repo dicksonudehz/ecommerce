@@ -29,6 +29,9 @@ const FeaturedProduct = () => {
     }
     setSelect(index);
   };
+  const HandleClick = (item)=> {
+console.log(item)
+  }
   return (
     <>
       <div className="featureProductContainer">
@@ -101,6 +104,7 @@ const FeaturedProduct = () => {
                       <div className="mainProTitle">
                         <h1 className="proTitle">{product.name}</h1>
                         <p className="proPrice">{product.price}</p>
+                        {/* <button className="" onClick={() =>HandleClick(product)}>view</button> */}
                       </div>
                     </div>
                   </div>
